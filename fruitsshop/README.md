@@ -49,6 +49,6 @@ To check code errors:
 - `mvn findbugs:gui`
 - `mvn pmd:pmd`
 <a href="https://github.com/Pashtetollo/Lab8/tree/lab8">
-<img src="https://i.pinimg.com/originals/01/c3/ec/01c3ec58275510d2668fc3944c1a87d1.png" alt="image coming" width="300" height ="300"/> <br>
-<figcaption> <b> Go back </b> </figcaption>
+<img src="https://static.wikia.nocookie.net/bakemonogatari1645/images/b/b9/Shinobu.png/revision/latest/top-crop/width/360/height/450?cb=20161221045011" alt="image coming"/> <br>
+<figcaption> <b> Go back <b> </figcaption>
 </a>
