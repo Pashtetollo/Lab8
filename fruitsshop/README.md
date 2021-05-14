@@ -48,7 +48,7 @@ To check code errors:
 - `mvn checkstyle:check`
 - `mvn findbugs:gui`
 - `mvn pmd:pmd`
-<a href="https://github.com/Pashtetollo/Lab8/tree/lab8">
+<a href="https://github.com/Pashtetollo/Lab8/pull/1">
 <img src="https://static.wikia.nocookie.net/bakemonogatari1645/images/b/b9/Shinobu.png/revision/latest/top-crop/width/360/height/450?cb=20161221045011" alt="image coming"/> <br>
-<figcaption> <b> Go back <b> </figcaption>
+<figcaption> <b> Go back to Pull request <b> </figcaption>
 </a>
