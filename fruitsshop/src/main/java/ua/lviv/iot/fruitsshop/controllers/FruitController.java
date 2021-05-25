@@ -27,12 +27,17 @@ public class FruitController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Fruit> getFruit(@PathVariable(name = "id") Integer id) {
-        return new ResponseEntity<>(fruitService.getFruit(id), HttpStatus.OK);
+    	if (fruitService.getFruit(id) != null) {
+    		return new ResponseEntity<>(fruitService.getFruit(id), HttpStatus.OK);
+    }
+    	else {
+    		return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    	}
     }
 
     @GetMapping
     public ResponseEntity<List<Fruit>> getFruits() {
-        return new ResponseEntity<>(fruitService.getFruits(), HttpStatus.OK);
+    		return new ResponseEntity<>(fruitService.getFruits(), HttpStatus.OK);
     }
 
     @PostMapping
@@ -40,9 +45,9 @@ public class FruitController {
     	return new ResponseEntity<>(fruitService.addFruit(fruit), HttpStatus.OK);
     }
 
-    @PutMapping
-    public ResponseEntity<Fruit> updateFruit(@RequestBody Fruit fruit) {
-        if (fruitService.getFruit(fruit.getId()) != null) {
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Fruit> updateFruit(@PathVariable Integer id, @RequestBody Fruit fruit) {
+        if (fruitService.getFruit(id) != null) {
             return new ResponseEntity<Fruit>(fruitService.updateFruit(fruit), HttpStatus.CREATED);
         } else {
             return new ResponseEntity<Fruit>(HttpStatus.NOT_FOUND);
@@ -50,7 +55,7 @@ public class FruitController {
     }
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Fruit> deleteFruit(@PathVariable Integer id){
-        if (fruitService.getFruitsMap().containsKey(id)) {
+        if (fruitService.getFruit(id) != null) {
             return new ResponseEntity<>(fruitService.deleteFruit(id), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
