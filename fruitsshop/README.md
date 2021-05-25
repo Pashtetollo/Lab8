@@ -1,15 +1,6 @@
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNIpvMrNHbqDsOI3lSQCsIu-PEYa1O1weLuA&usqp=CAU" alt="image coming" width="1200" height ="100"/> <br>
 
-# Lab_8
 
-## Task
-
-Write code for UML diagram from lab 2<br>
-My lab 2 task:<br>
-
-- **Fruit shop.** Implement the hierarchy of fruits present in the store. Search for citrus fruits and berries that ripen in summer. Print the result sorted by fruit color
-Implement the ability to sort the found fruit by another type of parameter (optional, implemented as a separate method)
-The implementation of sorting should provide the ability to sort both in descending and ascending order
 ### Class diagram:
 
 <a href="https://drive.google.com/file/d/1YVd56iuDgkppQ48XoEcpEXYJo6nriDio/view?usp=sharing">
@@ -17,38 +8,34 @@ The implementation of sorting should provide the ability to sort both in descend
 <p><figcaption> UML Diagram link </figcaption></p>
 </a>
 
+# Lab9
+## Task
+
+Create a REST service for one of the classes created in the previous laboratory work.<br>
+
 ## Requirements
 
-- Java code convention.
-- Classes had to be properly divided into packages.
-- Minimal working with the console.
-- Code must contain only classes from the class diagram.
-- Class attributes and methods should have the same visibility as in class diagram.
-- Use the built-in sorting methods available in Java to sort.
-- Sorting should be implemented in a separate method.
-- Only one static method is allowed in code - `main`.
-- Implementing element comparison and sorting should use lambda expressions.
-- `Lombok` annotations should be used instead of writing setters and getters.
-- Convert a project so that its assembly can be performed using maven.
-- Also connect the following plugins to pom.xml:
-- - Jacoco 
-- - FindBugs
-- - PMD
-- - Checkstyle
+- Service should have implemented CRUD operations.
+- GET request without id in url-request should return the list of all available objects.
+- The controller and RestApplication class code must be placed in separate packages.
+- Saving class objects should be done in a Map object.
+- The code should be checked using Findbugs / checkstyle / pmd plugins.
+
 ### To run the program:
 
-- Clone repo branch:**` git clone -b lab8 href`**
-- Enter the repo folder
-- Run **`mvn compile`**
-- Run **`mvn package`**  
-- Run **`java -cp target\fruitsshop-1.0-SNAPSHOT.jar ua.lviv.iot.fruitsshop.App`**
-
+- Clone repo:`git clone -b lab9 <url>`
+- Enter the repo folder via `cd` command
+- Change branch to Lab_9:`git checkout lab9`
+- Run `mvn compile`
+- Run `mvn package`
+- Run `java -jar target\fruitsshop-1.0-SNAPSHOT.jar`
 
 To check code errors:
 - `mvn checkstyle:check`
 - `mvn findbugs:gui`
 - `mvn pmd:pmd`
-<a href="https://www.youtube.com/">
-<img src="https://i.pinimg.com/originals/01/c3/ec/01c3ec58275510d2668fc3944c1a87d1.png" alt="image coming" width="300" height ="300"/> <br>
-<figcaption> <b> Go back </b> </figcaption>
+
+<a href="https://github.com/Pashtetollo/Lab8/pull/2">
+<img src="https://i0.wp.com/www.wishlovequotes.com/wp-content/uploads/2020/09/have-a-good-day-meme-1.jpg" alt="image coming" width="300" height ="300"/> <br>
+<figcaption> <b> Go to lab9 branch </b> </figcaption>
 </a>
