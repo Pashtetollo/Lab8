@@ -8,34 +8,30 @@
 <p><figcaption> UML Diagram link </figcaption></p>
 </a>
 
-# Lab9
+# Lab_10
+
 ## Task
 
-Create a REST service for one of the classes created in the previous laboratory work.<br>
+Implement saving of one of the classes from 10-th lab in a table in a database using `spring.boot` and `spring.data`
 
-## Requirements
+- 10-th lab code should be changed in such way, that permits saving/reading data to/from database.
+- Code should comply with code convention.
+- Code should be checked with findbugs, pmd and checkstyle plugins.
+- A separate pull request should be created.
+- Code must contain separate `Controller`, `Service` classes and `Repository` interface.
+- Configuration of database accessing should be done through properties file.
 
-- Service should have implemented CRUD operations.
-- GET request without id in url-request should return the list of all available objects.
-- The controller and RestApplication class code must be placed in separate packages.
-- Saving class objects should be done in a Map object.
-- The code should be checked using Findbugs / checkstyle / pmd plugins.
-
+## To run
 ### To run the program:
 
-- Clone repo:`git clone -b lab9 <url>`
+- Clone repo:`git clone -b lab10 <url>`
 - Enter the repo folder via `cd` command
-- Change branch to Lab_9:`git checkout lab9`
-- Run `mvn compile`
-- Run `mvn package`
+- Change branch to Lab10:`git checkout lab10`
+- Run `mvn install`
 - Run `java -jar target\fruitsshop-1.0-SNAPSHOT.jar`
 
-To check code errors:
-- `mvn checkstyle:check`
-- `mvn findbugs:gui`
-- `mvn pmd:pmd`
 
-<a href="https://github.com/Pashtetollo/Lab8/pull/2">
+<a href="https://github.com/Pashtetollo/Lab8/pull/3">
 <img src="https://i0.wp.com/www.wishlovequotes.com/wp-content/uploads/2020/09/have-a-good-day-meme-1.jpg" alt="image coming" width="300" height ="300"/> <br>
-<figcaption> <b> Go to lab9 branch </b> </figcaption>
+<figcaption> <b> Go to lab10 branch </b> </figcaption>
 </a>

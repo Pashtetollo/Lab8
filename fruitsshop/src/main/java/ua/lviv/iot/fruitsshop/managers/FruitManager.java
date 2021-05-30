@@ -35,14 +35,14 @@ public class FruitManager {
 		}
 	}
 	
-	public List<Fruit> isRipe(final Seasons season,final Order order) {
+	public List<Fruit> getRipe(final Seasons season,final Order order) {
 		List<Fruit> ripeList = fruits.stream().filter(fruit -> fruit.getSeason() == season)
 				.collect(Collectors.toList());
 		sortFruitsByColor(ripeList, order);
 		return ripeList;
 	}
 	
-	public List<Fruit> isAffordable(final double price,final Order order){
+	public List<Fruit> getAffordable(final double price,final Order order){
 		List<Fruit> affordableList = fruits.stream().filter(fruit -> fruit.getPrice() <= price)
 				.collect(Collectors.toList());
 		sortFruitsByPrice(affordableList, order);

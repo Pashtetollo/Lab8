@@ -1,44 +1,52 @@
 package ua.lviv.iot.fruitsshop.service;
 
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.ApplicationScope;
 
-import lombok.Getter;
 import ua.lviv.iot.fruitsshop.models.Fruit;
+import ua.lviv.iot.fruitsshop.dao.FruitRepository;
 
 @Service
 @ApplicationScope
 public class FruitService {
-	
-    static private AtomicInteger id = new AtomicInteger(0);
-    @Getter
-    private Map<Integer, Fruit> fruitsMap = new HashMap<Integer, Fruit>();
 
-    public Fruit addFruit(Fruit fruit) {
-        Integer fruitId = id.incrementAndGet();
-        fruit.setId(fruitId);
-        fruitsMap.put(fruitId, fruit);
-        return fruit;
-    }
+	@Autowired
+	private FruitRepository repository;
 
-    public Fruit updateFruit(Fruit fruit) {
-        return fruitsMap.put(fruit.getId(), fruit);
-    }
+	public Fruit addFruit(Fruit fruit) {
+		return repository.save(fruit);
+	}
 
-    public List<Fruit> getFruits() {
-        return fruitsMap.values().stream().collect(Collectors.toList());
-    }
+	public Fruit updateFruit(Fruit fruit, Integer id) {
+		if (repository.existsById(id)) {
+			fruit.setId(id);
+			return repository.save(fruit);
+		}
+		throw new NoSuchElementException("fruit with ID " + fruit.getId() + " NOT FOUND");
+	}
 
-    public Fruit getFruit(Integer id) {
-        return fruitsMap.get(id);
-    }
-    public Fruit deleteFruit(Integer id) {
-        return fruitsMap.remove(id);
-    }
+	public List<Fruit> getFruits() {
+		return repository.findAll();
+	}
+
+	public Fruit getFruit(Integer id) {
+		if (repository.existsById(id)) {
+			return repository.findById(id).get();
+		}
+		throw new NoSuchElementException("fruit with ID " + id + " NOT FOUND");
+	}
+
+	public Fruit deleteFruit(Fruit fruit, Integer id) {
+		Fruit deletedFruit = getFruit(id);
+		repository.deleteById(id);
+		return deletedFruit;
+	}
 }
