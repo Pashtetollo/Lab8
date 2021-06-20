@@ -1,6 +1,7 @@
 package ua.lviv.iot.fruitsshop;
 
 import ua.lviv.iot.fruitsshop.managers.FruitManager;
+import ua.lviv.iot.fruitsshop.managers.FruitWriter;
 import ua.lviv.iot.fruitsshop.models.Colors;
 import ua.lviv.iot.fruitsshop.models.Kinds;
 import ua.lviv.iot.fruitsshop.models.Order;
@@ -9,9 +10,11 @@ import ua.lviv.iot.fruitsshop.models.Pears;
 import ua.lviv.iot.fruitsshop.models.Seasons;
 import ua.lviv.iot.fruitsshop.models.Fruit;
 
-public class App {
-	public static void main(final String[] args) {
+import java.io.IOException;
 
+public class App {
+	public static void main(final String[] args) throws IOException {
+		FruitWriter ATBWriter= new FruitWriter();
 		FruitManager ATB = new FruitManager();
 
 		ATB.addFruit(Pear.pearBuilder().name("Pear").season(Seasons.SPRING).color(Colors.GREEN).price(15.50)
@@ -37,5 +40,6 @@ public class App {
 		System.out.println(ATB.isRipe(Seasons.SUMMER, Order.DESC));
 		System.out.println("      WHAT YOU CAN AFFORD FOR 16$");
 		System.out.println(ATB.isAffordable(16.0, Order.DESC));
+		ATBWriter.writeToFile(ATB.getFruits());
 	}
 }
