@@ -1,0 +1,13 @@
+ua\lviv\iot\fruitsshop\models\Colors.class
+ua\lviv\iot\fruitsshop\models\Order.class
+ua\lviv\iot\fruitsshop\managers\WriterTest.class
+ua\lviv\iot\fruitsshop\App.class
+ua\lviv\iot\fruitsshop\models\Pear$PearBuilder.class
+ua\lviv\iot\fruitsshop\models\Fruit.class
+ua\lviv\iot\fruitsshop\models\Kinds.class
+ua\lviv\iot\fruitsshop\models\Seasons.class
+ua\lviv\iot\fruitsshop\managers\FruitManager.class
+ua\lviv\iot\fruitsshop\models\Pears.class
+ua\lviv\iot\fruitsshop\models\Fruit$FruitBuilder.class
+ua\lviv\iot\fruitsshop\models\Pear.class
+ua\lviv\iot\fruitsshop\managers\Writer.class
